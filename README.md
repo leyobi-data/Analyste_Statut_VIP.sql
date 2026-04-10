@@ -19,5 +19,19 @@ Voici l'image du resultat affiché par SQL apres avoir exécuté le code<br>
   On s'est amusé à tester avec notre ID et le résultat est bien toutjours satisfaisant . <br>
   Ce model est une programmation via outil Tsql pour créer une macgine intélligente qui fournit pour une un nombre important de variable un résultat imédiat , ceci pour faciliter la prise de déscision de l'entreprise .<br>
   <br>
-  ON va s'amuser à traiter un autre cas qui met en évidente la programmation avec T-SQL .<br>
-  CONTEXTE: L' Entreprise AdventureworksLT veut automatiser la vérification de la disponibilité des produits pour éviter les ruptures de stock.La mision est d'écrire un SCRIP qui pourra afficher la disponibilité du stock selon l'état de celui-ci 
+ <b><h3>Cas Pratique : Automatisation de la Gestion des Stocks (T-SQL)</h3></b><br>
+​Dans ce module, j'ai développé un script de programmation procédurale en T-SQL permettant d'automatiser le contrôle des stocks pour l'entreprise AdventureWorks.<br>
+​🎯 Objectif<br>
+​L'objectif est de créer un système d'alerte intelligent qui identifie automatiquement si un produit nécessite un réapprovisionnement en fonction d'un seuil critique défini.
+​🛠️ Notions techniques utilisées :<br>
+​Variables dynamiques : Utilisation de DECLARE pour stocker des ID produits et des seuils de sécurité.<br>
+​Logique conditionnelle (IF...ELSE) : Mise en place de structures de décision pour classifier l'état des stocks.<br>
+​Gestion des données manquantes : Utilisation de IS NULL pour assurer la fiabilité du script face aux données incomplètes.<br>
+​Conversion de types : Utilisation de CAST pour générer des messages de rapport personnalisés et lisibles.<br>
+​📊 Résultat<br>
+​Le script extrait en temps réel les informations de la base de données et affiche instantanément un diagnostic (Stock suffisant / Alerte réapprovisionnement), facilitant ainsi la prise de décision pour les gestionnaires d'entrepôt.<br>
+L'image suite montre le code effectué sur SSMS
+<p align='center'>
+  <img src="NewRepo\Cas2.png" alt="Capture de SMS pour visualisation des résultats" width="600">
+</p>
+
