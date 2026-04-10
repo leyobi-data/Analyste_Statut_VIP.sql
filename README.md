@@ -15,3 +15,9 @@ Voici l'image du resultat affiché par SQL apres avoir exécuté le code<br>
   <p align='center'>
     <img src="NewRepo/resultat_ligneventes1.png" alt="Capture SSMS montrant le résultat" width="600">
   </p>
+  <br>
+  On s'est amusé à tester avec notre ID et le résultat est bien toutjours satisfaisant . <br>
+  Ce model est une programmation via outil Tsql pour créer une macgine intélligente qui fournit pour une un nombre important de variable un résultat imédiat , ceci pour faciliter la prise de déscision de l'entreprise .<br>
+  <br>
+  ON va s'amuser à traiter un autre cas qui met en évidente la programmation avec T-SQL .<br>
+  CONTEXTE: L' Entreprise AdventureworksLT veut automatiser la vérification de la disponibilité des produits pour éviter les ruptures de stock.La mision est d'écrire un SCRIP qui pourra afficher la disponibilité du stock selon l'état de celui-ci 
