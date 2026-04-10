@@ -62,4 +62,37 @@ END
 Heure de fin : 2026-04-10T18:29:05.3140541+01:00 */
 
 --On veut vérifier la disponibilité des produits dans le stock et affiché le résultat selon l'état de celui ci
+DECLARE @ProductID Int , @stockActuel decimal(10,2), @Seuil decimal(10,2);
+SET @ProductID = 973;
+SET @Seuil = 3500;
+--dans cette partie on suppose que la colonne  représente notre stock.
 
+SELECT @StockActuel = [Weight]
+FROM [SalesLT].[Product]
+WHERE [ProductID] = @ProductID;
+
+IF @StockActuel IS NULL 
+BEGIN
+	PRINT 'ETAT STOCK DU PRODUIT ['+CAST(@ProductID AS varchar)+']: AUCUNE INFORMATION DISPONIBLE POUR CE PRODUIT';
+END
+
+IF @StockActuel <= @Seuil
+BEGIN
+	PRINT 'ETAT STOCK DU PRODUIT ['+CAST(@ProductID AS varchar)+']:'+ CAST(@StockActuel AS varchar)+' --> ALERTE: Réapprovisionnement nécessaire pour le produit.';
+END
+
+ELSE
+BEGIN
+	PRINT 'ETAT STOCK DU PRODUIT ['+CAST(@ProductID AS varchar)+']:'+ CAST(@StockActuel AS varchar)+'--> Le STOCK est suffisant pour le produit.';
+END
+/* RESULTAT du programme: ETAT STOCK DU PRODUIT [707]: AUCUNE INFORMATION DISPONIBLE POUR CE PRODUIT
+ 
+
+Heure de fin : 2026-04-10T20:27:54.1628604+01:00 
+*/
+--Il suffit qu'on prenne un autre produit pour faire le test , exemple @ProductID = 973
+
+/*RESULTAT DU SCRIP: ETAT STOCK DU PRODUIT [973]:6962.61--> Le STOCK est suffisant pour le produit.
+
+Heure de fin : 2026-04-10T20:31:54.9651641+01:00
+*/
