@@ -23,3 +23,9 @@ ELSE
 BEGIN
 	PRINT 'COMMANDE['+CAST(@SalesOrderID AS varchar)+']:'+ CAST(@TotalLigne AS varchar)+'$ ->'+'Commande standard.';
 END
+
+`/* RESULTA DE L'EXECUTION:
+COMMANDE[71774]:356.90$ ->Commande standard.
+
+Heure de fin : 2026-04-10T09:10:22.9102217+01:00
+*/
