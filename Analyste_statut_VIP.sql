@@ -96,3 +96,19 @@ Heure de fin : 2026-04-10T20:27:54.1628604+01:00
 
 Heure de fin : 2026-04-10T20:31:54.9651641+01:00
 */
+
+--3-Script qui identifie les 5 produits les plus chers de la catégorie 'Touring Bikes' dont l'ID = 18 et la stocker dans une table en vue de faire d'autre opération 
+DECLARE @ProductCatID Int ;
+DECLARE @EvalProduct TABLE ( Rang int IDENTITY(1,1), NameProduct varchar(50) , ProductPrice money);
+
+SET @ProductCatID = 18;
+
+INSERT INTO @EvalProduct (NameProduct , ProductPrice)
+		SELECT TOP (5) p.[Name] , p.[ListPrice] 
+		FROM [SalesLT].[Product] AS p
+		JOIN [SalesLT].[ProductCategory] AS pc
+		ON p.[ProductCategoryID] = pc.[ProductCategoryID]
+		WHERE pc.[ProductCategoryID] = @ProductCatID
+		ORDER BY p.[ListPrice] DESC;
+		
+SELECT * FROM @EvalProduct;
